@@ -14,7 +14,7 @@
 	<script>
 		// HTML Callback
 			var exportHTML = function(new_html_)  {
-				console.log("new html: ", new_html_)
+				// console.log("new html: ", new_html_)
 				// var ta = document.getElementById("out");
 				// ta.value = new_html_;
 			}
@@ -29,24 +29,24 @@
 
 			
 		// Simple Browser Tests				
-			setTimeout(function(){								
-				// Destroy Editor
-					editor.destroy(); 
-					// // Rebuild
-					setTimeout(function(){ 
-						var editor = be.create({
-							element: document.getElementById('editor')					// Editor dom element
-							,content: document.querySelector("#content").innerHTML		// Initial HTML String									
-							,callback:  exportHTML										// HTML export callback method									
-							,scope: false												// Callback scope. If not set or false editor object view will be the scope
-						});
-					}, 3000);
-				// Change html
-					// document.getElementById('editor').innerHTML = "New HMTL from DOM";
-					// editor.html("New HTML from editor object<br><br><br><br><br>");
-				// Get html
-					// console.log(editor.html());
-			}, 3000);
+			// setTimeout(function(){								
+			// 	// Destroy Editor
+			// 		editor.destroy(); 
+			// 		// // Rebuild
+			// 		setTimeout(function(){ 
+			// 			var editor = be.create({
+			// 				element: document.getElementById('editor')					// Editor dom element
+			// 				,content: document.querySelector("#content").innerHTML		// Initial HTML String									
+			// 				,callback:  exportHTML										// HTML export callback method									
+			// 				,scope: false												// Callback scope. If not set or false editor object view will be the scope
+			// 			});
+			// 		}, 3000);
+			// 	// Change html
+			// 		// document.getElementById('editor').innerHTML = "New HMTL from DOM";
+			// 		// editor.html("New HTML from editor object<br><br><br><br><br>");
+			// 	// Get html
+			// 		// console.log(editor.html());
+			// }, 3000);
 		</script>
 </body>
 </html>
