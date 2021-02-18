@@ -10,21 +10,23 @@
 		  Hello Blank Editor!
 		</div>
 	</div>
+	<textarea name="value" id="out" style="display:none;"></textarea>
 	<script type="text/javascript" src="be.js"></script>
 	<script>
 		// HTML Callback
 			var exportHTML = function(new_html_)  {
 				// console.log("new html: ", new_html_)
-				// var ta = document.getElementById("out");
-				// ta.value = new_html_;
+				var ta = document.getElementById("out");
+				ta.value = new_html_;
 			}
 
 		// Build Editor
 			var editor = be.create({
-							element: document.getElementById('editor')					// Editor dom element
+							element: document.getElementById('editor')						// Editor dom element
 							,content: document.querySelector("#content").innerHTML		// Initial HTML String									
-							,callback:  exportHTML										// HTML export callback method									
-							,scope: false												// Callback scope. If not set or false editor object view will be the scope
+							,callback: exportHTML											// HTML export callback method									
+							,scope: false													// Callback scope. If not set or false editor object view will be the scope
+							,properties: "{\"placeholder\":\"Placeholder from props\u2026\",\"foo\":true}"	// Editor props {JSON String | Object}
 						});
 
 			
