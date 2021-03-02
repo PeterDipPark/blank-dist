@@ -4,51 +4,50 @@
 	<meta charset="utf8">
 </head>
 <body>
-	<div style="margin: 0px auto; padding: 0px 10px; width: 100%; display: block; max-width: 800px; box-sizing: border-box;">		
+	<div style="margin: 0px auto; padding: 0px 10px; width: 100%; display: block; max-width: 800px; box-sizing: border-box;">
+		<input name="html" id="html" readonly>
+		<input name="time" id="time" readonly>
+		<input name="words" id="words" readonly>
+		<br><br>
 		<div id="editor" style="margin-bottom: 23px"></div>
-		<div style="display: none" id="content">
-		  Hello Blank Editor!
-		</div>
-	</div>
-	<textarea name="value" id="out" style="display:none;"></textarea>
-	<script type="text/javascript" src="be.js"></script>
+	</div>	
+	<script type="text/javascript" src="be.js?v=2"></script>
 	<script>
-		// HTML Callback
-			var exportHTML = function(new_html_)  {
-				// console.log("new html: ", new_html_)
-				var ta = document.getElementById("out");
-				ta.value = new_html_;
+		
+		// Editor Callback
+			var output = function(o)  {
+				// html
+				if (o.html !== undefined) {
+					var html = document.getElementById("html");	
+					html.value = o.html;
+				}
+				// time
+				if (o.time !== undefined) {
+					var time = document.getElementById("time");
+					time.value = o.time;
+				}
+				// words
+				if (o.words !== undefined) {
+					var words = document.getElementById("words");
+					words.value = o.words;
+				}
+				// done
+				if (o.done===true) {
+					var editor = document.getElementById('editor');
+					editor.style.color = "#0000FF";
+				}
 			}
 
-		// Build Editor
-			var editor = be.create({
-							element: document.getElementById('editor')						// Editor dom element
-							,content: document.querySelector("#content").innerHTML		// Initial HTML String									
-							,callback: exportHTML											// HTML export callback method									
-							,scope: false													// Callback scope. If not set or false editor object view will be the scope
-							,properties: "{\"placeholder\":\"Placeholder from props\u2026\",\"foo\":true}"	// Editor props {JSON String | Object}
+		// Editor Create
+			var input = be.create({
+							element: document.getElementById('editor')											// Editor dom element
+							,content: "1Hello Blank Edito<br>asdasdasr!Hello Blank Edito<br>asdasdasr!Hello Blank Edito<br>asdasdasr!Hello Blank Edito<br>asdasdasr!Hello Blank Edito<br>asdasdasr!2"						// Initial HTML String									
+							,callback: output																	// Export callback method									
+							,scope: false																		// Callback scope. If not set or false editor (stripped) object view will be the scope
+							// Editor props {JSON String | Object}
+							,attributes: "{\"placeholder\":\"Placeholder from props\u2026\",\"time\":0,\"words\":20,\"paste\":true}"
 						});
-
-			
-		// Simple Browser Tests				
-			// setTimeout(function(){								
-			// 	// Destroy Editor
-			// 		editor.destroy(); 
-			// 		// // Rebuild
-			// 		setTimeout(function(){ 
-			// 			var editor = be.create({
-			// 				element: document.getElementById('editor')					// Editor dom element
-			// 				,content: document.querySelector("#content").innerHTML		// Initial HTML String									
-			// 				,callback:  exportHTML										// HTML export callback method									
-			// 				,scope: false												// Callback scope. If not set or false editor object view will be the scope
-			// 			});
-			// 		}, 3000);
-			// 	// Change html
-			// 		// document.getElementById('editor').innerHTML = "New HMTL from DOM";
-			// 		// editor.html("New HTML from editor object<br><br><br><br><br>");
-			// 	// Get html
-			// 		// console.log(editor.html());
-			// }, 3000);
+		
 		</script>
 </body>
 </html>
