@@ -39,11 +39,13 @@
 				if (o.words !== undefined) {
 					var words = document.getElementById("words");
 					words.value = o.words;
+					var editor = document.getElementById('editor');	
+					editor.removeAttribute("style");
 				}
 				// wordout
 				if (o.wordout === true) {
-					var editor = document.getElementById('editor');
-					editor.removeAttribute("style");
+					var editor = document.getElementById('editor');					
+					editor.style.color = "#0000FF";
 				}
 				// Paste/Drop event
 				if (o.paste === true) {
