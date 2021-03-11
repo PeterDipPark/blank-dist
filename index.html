@@ -30,16 +30,21 @@
 					var time = document.getElementById("time");
 					time.value = o.time;
 				}
-				// done
-				if (o.done === true) {
+				// timeout
+				if (o.timeout === true) {
 					var editor = document.getElementById('editor');
 					editor.style.color = "#0000FF";
-				}
+				}				
 				// words
 				if (o.words !== undefined) {
 					var words = document.getElementById("words");
 					words.value = o.words;
-				}				
+				}
+				// wordout
+				if (o.wordout === true) {
+					var editor = document.getElementById('editor');
+					editor.removeAttribute("style");
+				}
 				// Paste/Drop event
 				if (o.paste === true) {
 					console.info("paste event...")
@@ -59,7 +64,7 @@
 							// Callback scope. If not set or false Editor (be) object will be the scope.
 							,scope: false																		
 							// Editor attributes.
-							,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":10,\"words\":0,\"paste\":true,\"focus\":true}"
+							,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":0,\"words\":10,\"paste\":true,\"focus\":true}"
 						});
 
 		// Editor Options

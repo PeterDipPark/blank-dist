@@ -94,12 +94,16 @@ function(o)  {
 	if (o.words !== undefined) {
 		...
 	}
+	// Words limit reached
+	if (o.wordout === true) {
+		...
+	}
 	// Elapsed Time in Seconds 
 	if (o.time !== undefined) {
 		...
 	}	
-	// Timer finished
-	if (o.done === true) {
+	// Time limit reached
+	if (o.timeout === true) {
 		...
 	}
 	// Paste/Drop attempt
