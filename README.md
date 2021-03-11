@@ -99,11 +99,11 @@ function(o)  {
 		...
 	}	
 	// Timer finished
-	if (o.done===true) {
+	if (o.done === true) {
 		...
 	}
-	// Paste/Drop event
-	if (o.paste===true) {
+	// Paste/Drop attempt
+	if (o.paste === true) {
 		...
 	}
 }
