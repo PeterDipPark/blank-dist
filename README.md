@@ -20,15 +20,17 @@ Create the instance of the Editor.
 
 ```js
 const editor = be.create({
-	// Editor DOM element
-	element: document.getElementById('editor')
-	// Initial HTML string
-	,content: ""
-	// Callback Method
+	// Editor instance ID to be used for localStorage item key name.
+	id: "blankeditor"
+	// Editor DOM element.
+	,element: document.getElementById('editor')
+	// Initial HTML string. If not a String (i.e. false, null etc.), content will be pulled from localStorage.
+	,content: null
+	// Callback Method.
 	,callback: function(o) { console.info(o); }
 	// Callback scope. If not set or false Editor (be) object will be the scope.
 	,scope: false																		
-	// Editor attributes
+	// Editor attributes.
 	,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":0,\"words\":0,\"paste\":true,\"focus\":true}"
 });
 ```
@@ -46,6 +48,12 @@ To resume, allow input again call:
 
 ```js 
 be.play() 
+```
+
+To remove localStorage and reload editor window call:
+
+```js 
+be.reload() 
 ```
 
 The version and build of the Editor is available at:
