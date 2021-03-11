@@ -16,19 +16,19 @@ Generally, you need some DOM Element to attach the Editor.
 <div id="editor"></div>
 ```
 
-Create the instance of the Editor.
+Create an instance of the Editor.
 
 ```js
 const editor = be.create({
-	// Editor instance ID to be used for localStorage item key name.
+	// Editor instance ID to be used for localStorage. If the time attribute is used, there will be also '..._t' key for elapsed time.
 	id: "blankeditor"
 	// Editor DOM element.
 	,element: document.getElementById('editor')
-	// Initial HTML string. If not a String (i.e. false, null etc.), content will be pulled from localStorage.
+	// Initial HTML string. If not a string (i.e. false or null), content will be pulled from localStorage if available.
 	,content: null
 	// Callback Method.
 	,callback: function(o) { console.info(o); }
-	// Callback scope. If not set or false Editor (be) object will be the scope.
+	// Callback scope. If not set or false Editor object will be the scope.
 	,scope: false																		
 	// Editor attributes.
 	,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":0,\"words\":0,\"paste\":true,\"focus\":true}"
@@ -71,7 +71,7 @@ Editor behaviour can be altered using following attributes:
 	placeholder: ""
 	// Time limit for the Editor instance. When set to zero, there is no limit.
 	,time: 0
-	// Maximun words Editor can accept. When set to zero, there is no limit.
+	// Maximum words Editor can accept. When set to zero, there is no limit.
 	,words: 0
 	// Accept or Deny paste and drop event.
 	,paste: true
