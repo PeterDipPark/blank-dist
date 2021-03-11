@@ -65,7 +65,7 @@ Editor behaviour can be altered using following attributes:
 	,time: 0
 	// Maximun words Editor can accept. When set to zero, there is no limit.
 	,words: 0
-	// Accept or Deny text paste and drop event.
+	// Accept or Deny paste and drop event.
 	,paste: true
 	// Steal window focus on document mouseup/touchend event.
 	,focus: false
