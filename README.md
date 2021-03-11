@@ -20,7 +20,7 @@ Create an instance of the Editor.
 
 ```js
 const editor = be.create({
-	// Editor instance ID to be used for localStorage. If the time attribute is used, there will be also '..._t' key for elapsed time.
+	// Editor instance ID to be used for localStorage. If the time attribute is used, there will be also '{id}_t' key for elapsed time.
 	id: "blankeditor"
 	// Editor DOM element.
 	,element: document.getElementById('editor')
@@ -50,7 +50,7 @@ To resume, allow input again call:
 be.play() 
 ```
 
-To remove localStorage and reload editor window call:
+To remove localStorage {id} and {id}_t key and force reload browser window call:
 
 ```js 
 be.reload() 
