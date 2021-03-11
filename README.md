@@ -20,17 +20,17 @@ Create the instance of the Editor.
 
 ```js
 const editor = be.create({
-							// Editor DOM element
-							element: document.getElementById('editor')
-							// Initial HTML string
-							,content: ""
-							// Callback Method
-							,callback: function(o) { console.info(o); }
-							// Callback scope. If not set or false Editor (be) object will be the scope.
-							,scope: false																		
-							// Editor attributes
-							,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":0,\"words\":0,\"paste\":true,\"focus\":true}"
-						});
+	// Editor DOM element
+	element: document.getElementById('editor')
+	// Initial HTML string
+	,content: ""
+	// Callback Method
+	,callback: function(o) { console.info(o); }
+	// Callback scope. If not set or false Editor (be) object will be the scope.
+	,scope: false																		
+	// Editor attributes
+	,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":0,\"words\":0,\"paste\":true,\"focus\":true}"
+});
 ```
 
 
