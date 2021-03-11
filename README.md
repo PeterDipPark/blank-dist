@@ -36,9 +36,22 @@ const editor = be.create({
 
 ## Options
 
-To temporarily block any input and stop the timer (if used) call ```js be.pause() ```.
-To resume, allow input again call ```js be.play() ```.
-The version and build of the Editor is available at ```js be.version ```.
+To temporarily block any input and stop the timer (if used) call:
+
+```js 
+be.pause() 
+```
+
+To resume, allow input again call:
+
+```js 
+be.play() 
+```
+
+The version and build of the Editor is available at:
+```js 
+be.version
+```
 
 ## Attributes
 
