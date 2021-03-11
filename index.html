@@ -10,7 +10,7 @@
 		<input name="words" id="words" readonly>
 		<input type="button" id="pause" value="Pause">
 		<input type="button" id="play" value="Play">		
-		<input type="button" id="reload" value="Reload">
+		<input type="button" id="reset" value="Reset">
 		<br><br>
 		<div id="editor" style="margin-bottom: 23px"></div>
 	</div>	
@@ -74,10 +74,12 @@
 			play.onclick = function(e) {
 				be.play();
 			}
-			// Remove localStorage (id) item and force reload window
-			var reload = document.getElementById("reload");
-			reload.onclick = function(e) {
-				be.reload();
+			// Remove localStorage (id,id_t) items
+			var reset = document.getElementById("reset");
+			reset.onclick = function(e) {
+				be.reset();
+				// Reload window - optional
+				// window.location.reload(true);
 			}
 
 		</script>

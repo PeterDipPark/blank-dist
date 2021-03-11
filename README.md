@@ -50,10 +50,10 @@ To resume, allow input again call:
 be.play() 
 ```
 
-To remove localStorage {id} and {id}_t key and force reload browser window call:
+To remove localStorage {id} and {id}_t key call:
 
 ```js 
-be.reload() 
+be.reset() 
 ```
 
 The version and build of the Editor is available at:
