@@ -69,7 +69,7 @@ Editor behaviour can be altered using following attributes:
 {
 	// Text to display when there is no content.
 	placeholder: ""
-	// Time limit for the Editor instance. When set to zero, there is no limit.
+	// Time limit (sec) for the Editor instance. When set to zero, there is no limit.
 	,time: 0
 	// Maximum words Editor can accept. When set to zero, there is no limit.
 	,words: 0
