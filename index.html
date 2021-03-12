@@ -32,24 +32,20 @@
 				}
 				// timeout
 				if (o.timeout === true) {
-					var editor = document.getElementById('editor');
-					editor.style.color = "#0000FF";
+					console.warn("time limit reached! Editor destroyed.")
 				}				
 				// words
 				if (o.words !== undefined) {
 					var words = document.getElementById("words");
-					words.value = o.words;
-					var editor = document.getElementById('editor');	
-					editor.removeAttribute("style");
+					words.value = o.words;					
 				}
 				// wordout
 				if (o.wordout === true) {
-					var editor = document.getElementById('editor');					
-					editor.style.color = "#0000FF";
+					console.warn("Word goal reached!")
 				}
-				// Paste/Drop event
+				// Paste/Drop attempt
 				if (o.paste === true) {
-					console.info("paste event...")
+					console.warn("Paste/Drop event blocked!")
 				}
 			}
 
@@ -66,7 +62,7 @@
 							// Callback scope. If not set or false Editor (be) object will be the scope.
 							,scope: false																		
 							// Editor attributes.
-							,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":0,\"words\":10,\"paste\":true,\"focus\":true}"
+							,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":0,\"words\":0,\"paste\":true,\"focus\":true}"
 						});
 
 		// Editor Options
