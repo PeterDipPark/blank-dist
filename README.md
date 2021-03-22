@@ -86,27 +86,28 @@ Editor will send an object with following properties to callback method on every
 
 ```js
 function(o)  {
-	// New HTML
+	// New HTML - dispatched on document change (default)
 	if (o.html !== undefined) {
 		...
 	}
-	// Words count
+	// Words count - dispatched on word count change (default)
 	if (o.words !== undefined) {
 		...
 	}
-	// Words limit reached
+	// Words limit reached - dispatched when word limit reached (only if words attribute is -gt 0)
 	if (o.wordout === true) {
 		...
 	}
-	// Elapsed Time in Seconds 
+	// Elapsed Time in Seconds  - dispatched when time change (only if time attribute is -gt 0)
 	if (o.time !== undefined) {
 		...
 	}	
-	// Time limit reached
+	// Time limit reached - dispatched when time limit reached (only if time attribute is -gt 0)
 	if (o.timeout === true) {
+		// Editor destroyed 
 		...
 	}
-	// Paste/Drop attempt
+	// Paste/Drop attempt - dispatched when paste attempted (only if paste attribute is false)
 	if (o.paste === true) {
 		...
 	}
