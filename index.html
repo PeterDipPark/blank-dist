@@ -32,7 +32,8 @@
 				}
 				// timeout
 				if (o.timeout === true) {
-					console.warn("time limit reached! Editor destroyed.")
+					this.stop();
+					console.warn("Time limit reached! Editor destroyed.")
 				}				
 				// words
 				if (o.words !== undefined) {
@@ -41,7 +42,8 @@
 				}
 				// wordout
 				if (o.wordout === true) {
-					console.warn("Word goal reached!")
+					this.stop();
+					console.warn("Word goal reached! Editor destroyed.")
 				}
 				// Paste/Drop attempt
 				if (o.paste === true) {
@@ -50,20 +52,20 @@
 			}
 
 		// Editor Create
-			const input = be.create({
-							// Editor instance ID to be used for localStorage item key name.
-							id: "blankeditor"
-							// Editor DOM element.
-							,element: document.getElementById('editor')
-							// Initial HTML string. If not a string (i.e. false, null etc.), content will be pulled from localStorage.
-							,content: null
-							// Callback Method.
-							,callback: output
-							// Callback scope. If not set or false Editor (be) object will be the scope.
-							,scope: false																		
-							// Editor attributes.
-							,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":0,\"words\":0,\"paste\":true,\"focus\":false}"
-						});
+			be.create({
+				// Editor instance ID to be used for localStorage item key name.
+				id: "blankeditor"
+				// Editor DOM element.
+				,element: document.getElementById('editor')
+				// Initial HTML string. If not a string (i.e. false, null etc.), content will be pulled from localStorage.
+				,content: null
+				// Callback Method.
+				,callback: output
+				// Callback scope. If not set or false Editor (be) object will be the scope.
+				,scope: false																		
+				// Editor attributes.
+				,attributes: "{\"placeholder\":\"Type some text\u2026\",\"time\":0,\"words\":0,\"paste\":true,\"focus\":false}"
+			});
 
 		// Editor Options
 		
@@ -77,12 +79,10 @@
 			play.onclick = function(e) {
 				be.play();
 			}
-			// Remove localStorage (id,id_t) items
+			// Remove localStorage (id,id_t) items and relaod window
 			var reset = document.getElementById("reset");
 			reset.onclick = function(e) {
 				be.reset();
-				// Reload window - optional
-				// window.location.reload(true);
 			}
 
 		</script>

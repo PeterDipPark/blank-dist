@@ -10,16 +10,16 @@ JavaScript Plain Text Editor for Browser.
 
 ## Usage
 
-Generally, you need some DOM Element to attach the Editor. 
+Generally, you need some DOM Element for the Editor.
 
 ```html
 <div id="editor"></div>
 ```
 
-Create an instance of the Editor.
+Attach the Editor to DOM Element
 
 ```js
-const editor = be.create({
+be.create({
 	// Editor instance ID to be used for localStorage. If the time attribute is used, there will be also '{id}_t' key for elapsed time.
 	id: "blankeditor"
 	// Editor DOM element.
@@ -50,10 +50,16 @@ To resume, allow input again call:
 be.play() 
 ```
 
-To remove localStorage {id} and {id}_t key call:
+To remove localStorage {id} and {id}_t key and reload window call:
 
 ```js 
 be.reset() 
+```
+
+To destroy the editor and set html to DOM Element call:
+
+```js 
+be.stop() 
 ```
 
 The version and build of the Editor is available at:
@@ -96,6 +102,7 @@ function(o)  {
 	}
 	// Words limit reached - dispatched when word limit reached (only if words attribute is -gt 0)
 	if (o.wordout === true) {
+		// e.g.: call this this.stop() to destroy the editor
 		...
 	}
 	// Elapsed Time in Seconds  - dispatched when time change (only if time attribute is -gt 0)
@@ -104,7 +111,7 @@ function(o)  {
 	}	
 	// Time limit reached - dispatched when time limit reached (only if time attribute is -gt 0)
 	if (o.timeout === true) {
-		// Editor destroyed 
+		// e.g.: call this this.stop() to destroy the editor
 		...
 	}
 	// Paste/Drop attempt - dispatched when paste attempted (only if paste attribute is false)
