@@ -102,7 +102,7 @@ function(o)  {
 	}
 	// Words limit reached - dispatched when word limit reached (only if words attribute is -gt 0)
 	if (o.wordout === true) {
-		// e.g.: call this this.stop() to destroy the editor
+		// e.g.: call be.stop() to destroy the editor
 		...
 	}
 	// Elapsed Time in Seconds  - dispatched when time change (only if time attribute is -gt 0)
@@ -111,7 +111,7 @@ function(o)  {
 	}	
 	// Time limit reached - dispatched when time limit reached (only if time attribute is -gt 0)
 	if (o.timeout === true) {
-		// e.g.: call this this.stop() to destroy the editor
+		// e.g.: call be.stop() to destroy the editor
 		...
 	}
 	// Paste/Drop attempt - dispatched when paste attempted (only if paste attribute is false)
